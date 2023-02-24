@@ -141,8 +141,8 @@ Integer y = null;    // this is okay since Integer is a reference type
 
 The `NullPointerException` is a runtime exception that we may see occur in our
 programs from time to time. This is a more common exception to be on the lookout
-for! `NullPointerException` is thrown when we try to use an object that has a
-value of `null`. Consider the following:
+for! `NullPointerException` is thrown when we try to access a method or property
+of a variable that has a value of `null`. Consider the following:
 
 ```java
 public class Cat {
