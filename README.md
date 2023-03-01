@@ -177,3 +177,51 @@ public class Person {
     }
 }
 ```
+
+
+## Null Assertions
+
+We can test for the presence or absence of a `null` value using
+`assertNull` and `assertNotNull`.
+
+Let's update the `Person` class to add getters and setters for
+the `name` instance variable:
+
+```java
+public class Person {
+
+    private String name;  //initialized to null
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // ...
+}
+
+```
+
+The Junit test class `PersonTest` tests the `name`
+instance variable for a `null` value:
+
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class PersonTest {
+
+    @Test
+    void testNullReference() {
+        Person p = new Person();
+        assertNull(p.getName());  //name initialized to null as default value
+        p.setName("Amir");        //assign name to a string
+        assertNotNull(p.getName());  //assert name is no longer null
+    }
+
+}
+```
